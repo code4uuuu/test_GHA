@@ -41,7 +41,7 @@ jobs:
           java-version: 11
 
       - run:
-          bash echo "After set up Java"
+          echo "After set up Java"
   Push_to_Nexus:
     runs-on: ubuntu-latest
     steps:
@@ -60,8 +60,8 @@ jobs:
 
       - if: true
         run: |
-          bash echo "hello 1"
-          bash echo "hello 2"
-          bash echo "hello 3"
+          echo "hello 1"
+          echo "hello 2"
+          echo "hello 3"
 
 
