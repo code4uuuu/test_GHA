@@ -5,7 +5,7 @@ on:
     branches:
       - master
 jobs:
-  Source Clear Scan (SCA):
+  Source_Clear_Scan:
     runs-on: ubuntu-latest
     steps:
       # Typical Java workflow steps
@@ -21,10 +21,10 @@ jobs:
           distribution: xenial
           java-version: 11
 
-      - if: (github.ref_name == /support\/.*/) AND github.event_name!= pull_request AND github.event.head_commit.message!= /\[no-release\]/
+      - if: true
         run:
           bash echo "Hello manish"
-  Build and test:
+  Build_and_test:
     runs-on: ubuntu-latest
     steps:
       # Typical Java workflow steps
@@ -42,7 +42,7 @@ jobs:
 
       - run:
           bash echo "After set up Java"
-  Push to Nexus:
+  Push_to_Nexus:
     runs-on: ubuntu-latest
     steps:
       # Typical Java workflow steps
@@ -58,7 +58,7 @@ jobs:
           distribution: xenial
           java-version: 11
 
-      - if: (git.ref_name == /support\/.*/) AND github.event_name != pull_request AND github.event.head_commit.message !~ /\[no-release\]/
+      - if: true
         run: |
           bash echo "hello 1"
           bash echo "hello 2"
