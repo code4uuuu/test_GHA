@@ -23,7 +23,7 @@ jobs:
 
       - if: true
         run:
-          bash echo "Hello manish"
+          echo "Hello manish"
   Build_and_test:
     runs-on: ubuntu-latest
     steps:
