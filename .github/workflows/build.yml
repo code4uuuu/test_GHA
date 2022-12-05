@@ -18,7 +18,7 @@ jobs:
           JAVA_VERSION: 11
         uses: actions/setup-java@v3
         with:
-          distribution: xenial
+          distribution: adopt
           java-version: 11
 
       - if: true
@@ -37,7 +37,7 @@ jobs:
           JAVA_VERSION: 11
         uses: actions/setup-java@v3
         with:
-          distribution: xenial
+          distribution: adopt
           java-version: 11
 
       - run:
@@ -55,7 +55,7 @@ jobs:
           JAVA_VERSION: 11
         uses: actions/setup-java@v3
         with:
-          distribution: xenial
+          distribution: adopt
           java-version: 11
 
       - if: true
