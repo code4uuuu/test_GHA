@@ -1,0 +1,67 @@
+name: title
+
+on:
+  push:
+    branches:
+      - master
+jobs:
+  Source Clear Scan (SCA):
+    runs-on: ubuntu-latest
+    steps:
+      # Typical Java workflow steps
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Set up Java
+        env:
+          JAVA_VERSION: 11
+        uses: actions/setup-java@v3
+        with:
+          distribution: xenial
+          java-version: 11
+
+      - if: (github.ref_name == /support\/.*/) AND github.event_name!= pull_request AND github.event.head_commit.message!= /\[no-release\]/
+        run:
+          bash echo "Hello manish"
+  Build and test:
+    runs-on: ubuntu-latest
+    steps:
+      # Typical Java workflow steps
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Set up Java
+        env:
+          JAVA_VERSION: 11
+        uses: actions/setup-java@v3
+        with:
+          distribution: xenial
+          java-version: 11
+
+      - run:
+          bash echo "After set up Java"
+  Push to Nexus:
+    runs-on: ubuntu-latest
+    steps:
+      # Typical Java workflow steps
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Set up Java
+        env:
+          JAVA_VERSION: 11
+        uses: actions/setup-java@v3
+        with:
+          distribution: xenial
+          java-version: 11
+
+      - if: (git.ref_name == /support\/.*/) AND github.event_name != pull_request AND github.event.head_commit.message !~ /\[no-release\]/
+        run: |
+          bash echo "hello 1"
+          bash echo "hello 2"
+          bash echo "hello 3"
+
+
