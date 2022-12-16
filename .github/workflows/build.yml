@@ -1,4 +1,4 @@
-name: outlook build wrapper
+name: outlook build wrappers
 
 on:
   push:
